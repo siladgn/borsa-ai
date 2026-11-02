@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  borsabot:
+    build: .
+    container_name: ninja_borsa_bot
+    restart: unless-stopped  # Sunucu çökse/yeniden başlasa bile botu otomatik ayağa kaldır!
+    volumes:
+      # CSV dosyalarının sunucuda kalıcı olması için klasör eşleştirme
+      - ./data:/app/data
